@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Your Daily Plan</title>
+</head>
+<body>
+    <h1>Your Daily Plan for {{ date }}</h1>
+    <p>Hello {{ user.get_full_name }},</p>
+    <p>Here's your schedule for today:</p>
+    <ul>
+    {% for task in tasks %}
+        <li>{{ task.start_time }} - {{ task.end_time }}: {{ task.task.name }}</li>
+    {% empty %}
+        <li>No tasks scheduled for today.</li>
+    {% endfor %}
+    </ul>
+    <p>Have a productive day!</p>
+</body>
+</html>
